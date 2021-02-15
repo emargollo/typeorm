@@ -394,6 +394,20 @@ See [SSL options](https://github.com/mysqljs/mysql#ssl-options).
  
 * `sslPass` - String or buffer containing the certificate password (needs to have a mongod server with ssl support,
  2.4 or higher).
+
+* `tls` - Enable TLS connections. Default: `false`.
+
+* `tlsInsecure` - Relax TLS constraints, disabling validation. Default: `false`.
+
+* `tlsCAFile` - A path to file with either a single or bundle of certificate authorities to be considered trusted when making a TLS connection.
+
+* `tlsCertificateKeyFile` - A path to the client certificate file or the client private key file; in the case that they both are needed, the files should be concatenated.
+
+* `tlsCertificateKeyFilePassword` - The password to decrypt the client private key to be used for TLS connections.
+
+* `tlsAllowInvalidCertificates` - Specifies whether or not the driver should error when the server’s TLS certificate is invalid.
+
+* `tlsAllowInvalidHostnames` - Specifies whether or not the driver should error when there is a mismatch between the server’s hostname and the hostname specified by the TLS certificate.
  
 * `autoReconnect` - Reconnect on error. Default: `true`.
 

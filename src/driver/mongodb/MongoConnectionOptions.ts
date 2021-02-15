@@ -89,6 +89,41 @@ export interface MongoConnectionOptions extends BaseConnectionOptions {
     readonly sslCRL?: string|Buffer;
 
     /**
+     * Enable TLS connections. Default: false
+     */
+    readonly tls?: boolean;
+
+    /**
+     * Relax TLS constraints, disabling validation. Default: false
+     */
+    readonly tlsInsecure?: boolean;
+
+    /**
+     * A path to file with either a single or bundle of certificate authorities to be considered trusted when making a TLS connection
+     */
+    readonly tlsCAFile?: string;
+
+    /**
+     * A path to the client certificate file or the client private key file; in the case that they both are needed, the files should be concatenated
+     */
+    readonly tlsCertificateKeyFile?: string;
+
+    /**
+     * The password to decrypt the client private key to be used for TLS connections
+     */
+    readonly tlsCertificateKeyFilePassword?: string;
+
+    /**
+     * Specifies whether or not the driver should error when the server’s TLS certificate is invalid
+     */
+    readonly tlsAllowInvalidCertificates?: boolean;
+
+    /**
+     * Specifies whether or not the driver should error when there is a mismatch between the server’s hostname and the hostname specified by the TLS certificate
+     */
+    readonly tlsAllowInvalidHostnames?: boolean;
+
+    /**
      * Reconnect on error. Default: true
      */
     readonly autoReconnect?: boolean;
